@@ -1,0 +1,52 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Login</title>
+            </f:facet>
+        </h:head>
+        <meta http-equiv="Content-Type" content="text/html/ charset-UTF-8"/>
+        <h:body>
+            <h:form id="frm">
+
+                <div align="center" style="margin-top: 150px">
+                    <p:panelGrid columns="2">
+                        <f:facet name="header">
+                            Dados de login
+                        </f:facet> 
+                        <p:outputLabel value="Usuário" for="usuario"/>
+                        <p:inputText id="usuario" required="true" value="#{usuario.usuario}" />
+                        <p:outputLabel value="Senha" for="senha"/>
+                        <p:password id="senha" required="true" value="#{usuario.senha}" feedback="true"/>                                 
+                        <f:facet name="footer">
+                        </f:facet>
+                    </p:panelGrid>
+                    <div align="center"> 
+                        <p:commandButton value="Logar" icon="ui-icon-check" action="#{usuario.validarLogin(usuario, senha)}" update="@form"/>
+                        <p:commandButton value="Esqueci a senha" icon="ui-icon-help" />
+
+                    </div>
+
+                    <p:messages/>
+
+                </div>
+
+            </h:form>
+
+            <p:layout fullPage="true">
+
+
+            </p:layout>
+
+        </h:body>
+
+    </f:view>
+</html>
+
