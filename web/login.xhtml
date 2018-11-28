@@ -24,13 +24,14 @@
                         <p:outputLabel value="Usuário" for="usuario"/>
                         <p:inputText id="usuario" required="true" value="#{usuario.usuario}" />
                         <p:outputLabel value="Senha" for="senha"/>
-                        <p:password id="senha" required="true" value="#{usuario.senha}" feedback="true"/>                                 
+                        <p:password id="senha" required="true" value="#{usuario.senha}" feedback="true" weakLabel="Senha fraca" goodLabel="Senha razoável" strongLabel="Senha forte"
+                                        />                                 
                         <f:facet name="footer">
                         </f:facet>
                     </p:panelGrid>
                     <div align="center"> 
-                        <p:commandButton value="Logar" icon="ui-icon-check" action="#{usuario.validarLogin(usuario, senha)}" update="@form"/>
-                        <p:commandButton value="Esqueci a senha" icon="ui-icon-help" />
+                        <p:commandButton value="Logar" icon="ui-icon-check" action="#{usuario.validarLogin(usuario, senha)}" update="frm"/>
+                        <p:commandButton value="Esqueci a senha" icon="ui-icon-help" ajax="false" action="/index.xhtml?faces-redirect=true" update="usuario"/>
 
                     </div>
 

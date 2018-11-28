@@ -30,8 +30,8 @@ public class Usuario implements Serializable {
     public void setId(int id) {
         this.id = id;
     }
-    
-    @Column(name="usuario") 
+
+    @Column(name = "usuario")
     public String getUsuario() {
         return usuario;
     }
@@ -39,7 +39,8 @@ public class Usuario implements Serializable {
     public void setUsuario(String usuario) {
         this.usuario = usuario;
     }
-    @Column(name="senha") 
+
+    @Column(name = "senha")
     public String getSenha() {
         return senha;
     }
@@ -72,17 +73,17 @@ public class Usuario implements Serializable {
         }
         return true;
     }
-    
-    
 
-    public void validarLogin(String usuario, String senha) {
+    public String validarLogin(String usuario, String senha) {
         if (getUsuario().equals("ailton") && getSenha().equals("123")) {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Bem vindo " + getUsuario()));
+            //FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Bem vindo " + getUsuario()));
+            return "index.xhtml";
         } else {
-            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Dados incorretos. "));
-            //teste alterações
-            //teste local
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR, "Dados de login inválidos! ",null));
         }
-
+        return null;
+        
     }
+    
+
 }
