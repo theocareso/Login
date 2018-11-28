@@ -81,6 +81,7 @@ public class Usuario implements Serializable {
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Dados incorretos. "));
             //teste alterações
+            //teste local
         }
 
     }
