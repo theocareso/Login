@@ -80,6 +80,7 @@ public class Usuario implements Serializable {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Bem vindo " + getUsuario()));
         } else {
             FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Dados incorretos. "));
+            //teste alterações
         }
 
     }
