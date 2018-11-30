@@ -76,6 +76,7 @@ public class Usuario implements Serializable {
 
     public String validarLogin(String usuario, String senha) {
         if (getUsuario().equals("ailton") && getSenha().equals("123")) {
+            FacesMessage msg = new FacesMessage("Successful", "Welcome :" + getUsuario());
             //FacesContext.getCurrentInstance().addMessage(null, new FacesMessage("Bem vindo " + getUsuario()));
             return "index.xhtml";
         } else {

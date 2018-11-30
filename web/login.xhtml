@@ -16,6 +16,7 @@
         <h:body>
             <h:form id="frm">
 
+                    <p:messages/>
                 <div align="center" style="margin-top: 150px">
                     <p:panelGrid columns="2">
                         <f:facet name="header">
@@ -25,26 +26,20 @@
                         <p:inputText id="usuario" required="true" value="#{usuario.usuario}" />
                         <p:outputLabel value="Senha" for="senha"/>
                         <p:password id="senha" required="true" value="#{usuario.senha}" feedback="true" weakLabel="Senha fraca" goodLabel="Senha razoável" strongLabel="Senha forte"
-                                        />                                 
+                                    />                                 
                         <f:facet name="footer">
                         </f:facet>
                     </p:panelGrid>
                     <div align="center"> 
                         <p:commandButton value="Logar" icon="ui-icon-check" action="#{usuario.validarLogin(usuario, senha)}" update="frm"/>
-                        <p:commandButton value="Esqueci a senha" icon="ui-icon-help" ajax="false" action="#{usuario.recuperarSenha()}" update="usuario"/>
+                        <p:commandLink onclick="" value="Esqueci a senha" actionListener="index.xhtml"/>
 
                     </div>
 
-                    <p:messages/>
 
                 </div>
 
             </h:form>
-
-            <p:layout fullPage="true">
-
-
-            </p:layout>
 
         </h:body>
 
