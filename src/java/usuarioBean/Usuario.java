@@ -89,7 +89,7 @@ public class Usuario implements Serializable {
     public String recuperarSenha(){
         return "recuperarSenha.xhtml";
         
-       //teste
+       //teste 1    
         
     }
 
