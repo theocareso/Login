@@ -31,7 +31,7 @@
                     </p:panelGrid>
                     <div align="center"> 
                         <p:commandButton value="Logar" icon="ui-icon-check" action="#{usuario.validarLogin(usuario, senha)}" update="frm"/>
-                        <p:commandButton value="Esqueci a senha" icon="ui-icon-help" ajax="false" action="/index.xhtml?faces-redirect=true" update="usuario"/>
+                        <p:commandButton value="Esqueci a senha" icon="ui-icon-help" ajax="false" action="#{usuario.recuperarSenha()}" update="usuario"/>
 
                     </div>
 

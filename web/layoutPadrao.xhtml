@@ -11,6 +11,42 @@ and open the template in the editor.
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     </head>
     <body>
-        <div>TODO write content</div>
+        <ui:define name="content">
+            <div align="center">
+
+                <h:form>
+
+                    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+                    <h:panelGrid columns="2" border="0">
+                        <p:panel header="Acesso ao Sistema">
+                            <p:panelGrid columns="2" styleClass="semBorda" columnClasses="semBorda,semBorda">
+                                <p:outputLabel value="Usuário" for="username" />
+
+                                <p:inputText id="username" value="#" required="true"/>
+                                <p:spacer></p:spacer>
+                                <p:message for="username" ></p:message>
+
+                                <p:outputLabel value="Senha" for="password" />
+                                <p:password id="password" feedback="false" value="#" required="true"/>
+                                <p:spacer></p:spacer>
+
+                                <p:message for="password"></p:message>
+
+                                <p:spacer></p:spacer>
+                                <h:outputText value="" />
+                                <p:commandLink value="Esqueceu sua senha?" />
+                                <h:outputText value="" />
+                                <p:commandButton value="Login"/>
+                                <h:outputText value="" />
+                                <p:commandLink value="Cadastre-se" />
+                            </p:panelGrid>
+                        </p:panel>
+                        <br />
+                    </h:panelGrid>
+                </h:form>
+            </div>
+
+        </ui:define>
+            
     </body>
 </html>
